@@ -16,17 +16,17 @@ if [[ -f $ENV_DIR/HEALTH_MONITORING_SSH_KEY && -f $ENV_DIR/HEALTH_MONITORING_SSH
   fi
 
   # Load the private key into custom_key file.
-  base64 --decode $ENV_DIR/HEALTH_MONITORING_SSH_KEY > ~/.ssh/custom_key
+  base64 --decode $ENV_DIR/HEALTH_MONITORING_SSH_KEY > ~/.ssh/health_montioring_key
 
   # Change the permissions on the file to
   # be read-only for this user.
-  chmod 400 ~/.ssh/custom_key
+  chmod 400 ~/.ssh/health_montioring_key
 
   # Split $HEALTH_MONITORING_SSH_KEY_HOSTS
   IFS=',' ;for element in `cat $ENV_DIR/HEALTH_MONITORING_SSH_KEY_HOSTS`;
   do
     echo -e "Host $element\n"\
-            "  IdentityFile ~/.ssh/custom_key\n"\
+            "  IdentityFile ~/.ssh/health_montioring_key\n"\
             "  IdentitiesOnly yes\n"\
             "  UserKnownHostsFile=/dev/null\n"\
             "  StrictHostKeyChecking no"\
