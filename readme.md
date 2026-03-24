@@ -1,5 +1,7 @@
 # Heroku Buildpack: Custom SSH key
 
+*Fork of https://github.com/simon0191/custom-ssh-key-buildpack*
+
 Use *Custom SSH key buildpack* if you need to, for example, download a dependency stored in a private repository.
 
 Based on [http://stackoverflow.com/a/29677091/3303182](http://stackoverflow.com/a/29677091/3303182).
@@ -7,7 +9,7 @@ Based on [http://stackoverflow.com/a/29677091/3303182](http://stackoverflow.com/
 ## Usage
 
 - Add the buildpack to your app:
-  `heroku buildpacks:add --index 1 https://github.com/simon0191/custom-ssh-key-buildpack`
+  `heroku buildpacks:add --index 1 https://github.com/RoleModel/health-monitoring-ssh-key-buildpack`
 
 - Generate a new SSH key (https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 
